@@ -1,0 +1,92 @@
+.footer {
+    padding: 5rem 4rem 6rem;
+    background-color: var(--bg-color);
+}
+
+.footer-menu ul {
+    margin-bottom: 3rem;
+    padding: 0 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-menu li {
+    margin-right: 3rem;
+    display: inline-block;
+}
+
+.footer-menu li a {
+    position: relative;
+    font-size: 1.6rem;
+    line-height: 2;
+    white-space: nowrap;
+    color: var(--white);
+}
+
+.footer-menu li a::after {
+    content: '';
+    position: absolute;
+    inset: calc(100% + .45rem) 100% -.5rem 0;
+    background-color: var(--white);
+    transition: right .3s linear;
+}
+
+.footer-menu li a:hover::after {
+    right: 0;
+}
+
+.footer-socials {
+    padding: 0 2rem 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-socials a {
+    margin-left: 1.2rem;
+    min-width: 2.4rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.footer-socials a svg {
+    margin-right: -.4rem;
+}
+
+.footer .footer-desc p {
+    margin-bottom: 3rem;
+    padding: 0 2rem 0 calc(2rem + 1em);
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    text-indent: -1em;
+    color: var(--white);
+}
+
+.footer .footer-desc p::before {
+    content: '*';
+    padding-right: .5rem;
+}
+
+.footer .footer-copyright p {
+    padding: 0 2rem 0;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    color: var(--white);
+}
+
+.emissions {
+    position: fixed;
+    inset: auto 0 0;
+    padding: .5rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 500;
+}

@@ -1,0 +1,61 @@
+.slider2-repl {
+    margin: 6rem 0;
+    display: none;
+}
+
+.slider2-repl > h2 {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+.slider-img-link {
+    position: relative;
+    width: 60%;
+    height: 45vh;
+    background-image: linear-gradient(to top, #fff, #c5c5c5, #fff);
+}
+
+.slider-img-link img {
+    position: absolute;
+    inset: 50% -1rem auto auto;
+    min-width: 115% !important;
+    max-height: 100%;
+    object-fit: contain;
+    transform: translateY(-50%);
+}
+
+.slider-info {
+    background-color: var(--white);
+}
+
+.slider-info-item {
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.slider-info .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0 !important;
+}
+
+.slider-name {
+    font-size: 4rem;
+    line-height: 1.25;
+    letter-spacing: .04rem;
+}
+
+.slider-slogan {
+    margin-bottom: 2rem;
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 1.32;
+}
+
+.slider-btn-wrap .btn-secondary {
+    margin-bottom: 1.5rem;
+}
+
+.slider-btn-wrap .btn-secondary + .btn-secondary {
+    margin-left: 1rem;
+}

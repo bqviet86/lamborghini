@@ -1,0 +1,35 @@
+.banner {
+    position: relative;
+}
+
+.banner-img {
+    height: 63rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 8.33333%;
+    transform: translateY(-50%);
+    color: var(--white);
+}
+
+.banner-title {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: .12rem;
+}
+
+.banner-desc {
+    margin: 1rem 0 3rem;
+    font-size: 7.6rem;
+    line-height: .97;
+    letter-spacing: -.228rem;
+}
+
+.banner-link {
+    display: inline-block;
+}

@@ -1,0 +1,22 @@
+// SLICK SLIDER
+$(document).ready(function() {
+	$('.slider3').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		speed: 300,
+		fade: true,
+		cssEase: 'ease',
+		arrows: false,
+		draggable: false,
+	});
+});
+
+// Handle animation Slider3-title
+setInterval(function() {
+	let alphabets = getAll(
+		'.slick-current.slick-active .slider3-title > div > div'
+	);
+
+	runAlphabet(alphabets, 0);
+}, 1);

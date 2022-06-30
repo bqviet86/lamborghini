@@ -1,0 +1,45 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -2rem;
+    margin-right: -2rem;
+}
+
+.column {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.column-3-5 {
+    width: 29.16667%;
+}
+
+.column-4 {
+    width: 33.33333%;
+}
+
+.column-6 {
+    width: 50%;
+}
+
+.column-8 {
+    width: 66.66667%;
+}
+
+.column-8-5 {
+    width: 70.83333%;
+}
+
+.column-12 {
+    width: 100%;
+}
+
+.no-space {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.no-space>[class*=column-] {
+    padding-left: 0;
+    padding-right: 0;
+}

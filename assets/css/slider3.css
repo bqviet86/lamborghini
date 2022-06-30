@@ -1,0 +1,132 @@
+.slider3 {
+    position: relative;
+}
+
+.slider3-img {
+    height: 70rem;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.slider3-content {
+    position: absolute;
+    inset: 14rem auto auto 8.33333%;
+}
+
+.slider3-title {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: -.3rem;
+}
+
+.slider3-title > div > div {
+    display: inline-block;
+    opacity: 0;
+}
+
+.slider3-desc {
+    margin: .9rem 0 3rem;
+    font-size: 7.6rem;
+    line-height: .97;
+    letter-spacing: -.228rem;
+}
+
+.slider3-desc div {
+    opacity: 0;
+}
+
+.slider3-link {
+    display: inline-block;
+    transform: scale(0);
+    transform-origin: calc(100% + 2rem) 50%;
+}
+
+.slider3-link:hover svg.btn path:nth-child(1) {
+    fill: var(--black);
+}
+
+.slider3-link:hover svg.btn path:nth-child(2) {
+    stroke: var(--white);
+}
+
+.slider3-img.slick-slide.slick-current.slick-active .slider3-title > div > div {
+    animation: clear .5s ease-out forwards;
+}
+
+.slider3-img.slick-slide.slick-current.slick-active .slider3-desc > div {
+    animation: textRun2 .5s ease-out forwards;
+}
+
+.slider3-img.slick-slide.slick-current.slick-active .slider3-desc > div:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.slider3-img.slick-slide.slick-current.slick-active .slider3-link {
+    animation: scale .5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.slider3 .slick-dots {
+    position: absolute;
+    inset: auto auto 21rem 8.33333%;
+    display: flex !important;
+}
+
+.slider3 .slick-dots::after {
+    content: '';
+    position: absolute;
+    inset: 100% 0 -.1rem 0;
+    background-color: #2020204D;
+}
+
+.slider3 .slick-dots li {
+    position: relative;
+    padding: 0 6.5rem 1.2rem 0;
+    cursor: pointer;
+}
+
+.slider3 .slick-dots li::after {
+    content: '';
+    position: absolute;
+    inset: calc(100% - .1rem) 100% -.1rem 0;
+    background-color: #202020;
+    transition: all .2s ease-out;
+}
+
+.slider3 .slick-dots li:hover::after,
+.slider3 .slick-dots li.slick-active::after {
+    right: 0;
+}
+
+.slider3 .slick-dots li button {
+    font-size: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.slider3 .slick-dots li button::before {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #2020204D;
+    transition: color .5s ease-out;
+}
+
+.slider3 .slick-dots li:nth-child(1) button::before {
+    content: 'Aventador';
+}
+
+.slider3 .slick-dots li:nth-child(2) button::before {
+    content: 'Huracán';
+}
+
+.slider3 .slick-dots li:nth-child(3) button::before {
+    content: 'Urus';
+}
+
+.slider3 .slick-dots li:hover button::before,
+.slider3 .slick-dots li.slick-active button::before {
+    color: #202020;
+}

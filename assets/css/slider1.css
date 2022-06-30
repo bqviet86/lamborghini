@@ -1,0 +1,105 @@
+.slider1 {
+    position: relative;
+    height: 100vh;
+}
+
+.slick-list, .slick-track {
+    height: 100%;
+}
+
+.slider1-img {
+    height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.slider1-img img {
+    position: absolute;
+    inset: 50% 0 0 0;
+    transform: translateY(-50%);
+}
+
+.slider1-content {
+    position: absolute;
+    top: 50%;
+    left: 8.33333%;
+    text-shadow: 0 0 .1rem rgba(0, 0, 0, .7);
+    color: var(--white);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.slider1-title {
+    margin-bottom: 1rem;
+    font-size: 3.4rem;
+    letter-spacing: -.4rem;
+    font-weight: 500;
+}
+
+.slider1-title > div + div {
+    margin-left: 1rem;
+}
+
+.slider1-title > div > div {
+    display: inline-block;
+    opacity: 0;
+}
+
+.slider1-desc {
+    margin-bottom: 2rem;
+    font-size: 11rem;
+    line-height: .9;
+    letter-spacing: -.4rem;
+    opacity: 0;
+}
+
+.slider1-link {
+    display: inline-block;
+    margin-left: .6rem;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.slider1-img.slick-slide.slick-current.slick-active .slider1-title > div > div {
+    animation: clear .5s ease-out forwards;
+}
+
+.slider1-img.slick-slide.slick-current.slick-active .slider1-desc {
+    animation: textRun .7s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.slider1-img.slick-slide.slick-current.slick-active .slider1-link {
+    animation: scale .5s ease-out forwards;
+    animation-delay: 2s;
+}
+
+.slider1 .slick-dots {
+    position: absolute;
+    inset: auto auto 5rem 8.33333%;
+    display: flex !important;
+}
+
+.slider1 .slick-dots li + li {
+    margin-left: .8rem;
+}
+
+.slider1 .slick-dots li button {
+    padding: 1.2rem 0 .2rem;
+    border: none;
+    font-size: 0;
+    width: 5.4rem;
+    height: 1.5rem;
+    box-sizing: border-box;
+    background-color: #8a8b8c;
+    background-clip: content-box;
+    cursor: pointer;
+    transition: all .4s ease-out;
+}
+
+.slider1 .slick-dots li.slick-active button {
+    padding-top: 1rem;
+    background-color: var(--white);
+}
