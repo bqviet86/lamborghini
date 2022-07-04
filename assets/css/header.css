@@ -556,7 +556,7 @@
 
 .menu-language.active {
     color: #909090;
-    cursor: default;
+    pointer-events: none;
 }
 
 .menu-socials {
@@ -741,7 +741,7 @@
 }
 
 .action-button {
-    position: absolute;
+    position: relative;
     inset: 0;
     padding: 1.5rem 7vw 2rem;
     display: flex;
@@ -790,14 +790,15 @@
 
 .action-content {
     position: absolute;
-    inset: 0 0 auto;
+    inset: auto 0 100%;
     padding: 2.5rem 7vw 1rem;
     background-color: var(--white);
+    transform: translateY(100%);
     transition: all .3s ease-out;
 }
 
 .action-content.active {
-    transform: translateY(-100%);
+    transform: translateY(0);
 }
 
 .action-content > a {

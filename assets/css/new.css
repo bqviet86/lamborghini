@@ -46,7 +46,7 @@
 }
 
 .new-above .new-time {
-    margin: 6rem 0 1.6rem;
+    margin-top: 6rem;
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.3;
@@ -54,7 +54,7 @@
 }
 
 .new-link-small {
-    margin: 1.6rem 0 1.1rem;
+    margin: 1.1rem 1rem 1.1rem 0;
     padding: .5rem 1rem;
     display: block;
     width: fit-content;
@@ -71,8 +71,12 @@
     background-color: var(--black);
 }
 
+.new-link {
+    width: 100%;
+}
+
 .new-link h3 {
-    margin-top: 1rem;
+    margin-top: 1.1rem;
     font-size: 3.2rem;
     font-weight: bold;
     line-height: 1.1;
@@ -136,12 +140,13 @@
     letter-spacing: .14rem;
 }
 
-.new-under .new-link-small {
-    margin-bottom: 1.6rem;
+.new-under .new-link-wrap {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .new-under .new-link h3 {
-    margin-top: 1.5rem;
+    margin-top: 0;
 }
 
 .new-under-btn-wrap {
