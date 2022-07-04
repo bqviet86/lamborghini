@@ -20,15 +20,15 @@ function openChatAndSearch(
 	headerIcons,
 	headerOverlay
 ) {
-	if (box) box.classList.add('active');
+	box && box.classList.add('active');
 
-	if (boxOverlay) boxOverlay.classList.remove('open');
+	boxOverlay && boxOverlay.classList.remove('open');
 
-	if (headerNavbar) headerNavbar.setAttribute('style', 'opacity: .3');
+	headerNavbar && headerNavbar.setAttribute('style', 'opacity: .3');
 
-	if (headerIcons) headerIcons.setAttribute('style', 'opacity: .3');
-
-	if (headerOverlay) headerOverlay.classList.add('open');
+	headerIcons && headerIcons.setAttribute('style', 'opacity: .3');
+	
+	headerOverlay && headerOverlay.classList.add('open');
 }
 
 function closeChatAndSearch(
@@ -38,15 +38,15 @@ function closeChatAndSearch(
 	headerIcons,
 	headerOverlay
 ) {
-	if (box) box.classList.remove('active');
+	box && box.classList.remove('active');
 
-	if (boxOverlay) boxOverlay.classList.remove('open');
+	boxOverlay && boxOverlay.classList.remove('open');
 
-	if (headerNavbar) headerNavbar.setAttribute('style', 'opacity: unset');
+	headerNavbar && headerNavbar.setAttribute('style', 'opacity: unset');
 
-	if (headerIcons) headerIcons.setAttribute('style', 'opacity: unset');
+	headerIcons && headerIcons.setAttribute('style', 'opacity: unset');
 
-	if (headerOverlay) headerOverlay.classList.remove('open');
+	headerOverlay && headerOverlay.classList.remove('open');
 }
 
 // Open Chat-box
@@ -123,7 +123,6 @@ setInterval(function() {
 let headerIcon = getAll('.header-icon:not(:last-child)');
 let menuIcon = get('.icon-menu');
 let menu = get('.menu');
-let languageActive = get('.menu-language.active');
 
 // Open Menu
 menuIcon.addEventListener('click', function() {
@@ -154,11 +153,6 @@ menuIcon.addEventListener('click', function() {
 	}
 });
 
-// Prevent click Language-active
-languageActive.addEventListener('click', function(e) {
-	e.preventDefault();
-});
-
 // Menu-height auto
 setInterval(function() {
 	let windowWidth = window.innerWidth;
@@ -184,7 +178,6 @@ let menuButtonLv1 = getAll('.menu-lv1 > ul > li > div.menu-button');
 let menuButtonBack = getAll('.menu-button.back');
 let menuButtonLv2 = getAll('.menu-lv2 > ul > li > div.menu-button');
 let menuSub = getAll('.menu-sub');
-let menuOverview = getAll('.menu-lv2 > .menu-overview');
 let actionButtons = getAll('.action-button');
 
 function activeElementArray(idName, className) {
@@ -256,23 +249,19 @@ openSub(menuButtonLv2, menuSub, '');
 
 menuButtonLv2.forEach(element => {
 	element.addEventListener('click', function() {
+		let menuOverview = get('.menu-lv2.active > .menu-overview');
+
 		if(!this.classList.contains('active')) {
 			menuButtonLv2.forEach(element => {
 				element.classList.remove('active');
 			});
 
 			this.classList.add('active');
-
-			menuOverview.forEach(element => {
-				element.setAttribute('style', 'opacity: 0; visibility: hidden');
-			});
+			menuOverview.classList.add('hidden');
 		} 
 		else {
 			this.classList.remove('active');
-
-			menuOverview.forEach(element => {
-				element.removeAttribute('style');
-			});
+			menuOverview.classList.remove('hidden');
 		}
 	});
 });

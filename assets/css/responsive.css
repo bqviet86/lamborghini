@@ -171,13 +171,13 @@
 
     /* SLIDER1 */
     .slider1-img:nth-child(1) {
-        background-image: url(../img/slider1/huracan_evo_resp.jpg) !important;
+        background-image: url(../img/slider1/slider1-img1-resp.jpg) !important;
     }
     .slider1-img:nth-child(2) {
-        background-image: url(../img/slider1/sian_rds_resp.jpg) !important;
+        background-image: url(../img/slider1/slider1-img2-resp.jpg) !important;
     }
     .slider1-img:nth-child(3) {
-        background-image: url(../img/slider1/urus_pearl_resp.jpg) !important;
+        background-image: url(../img/slider1/slider1-img3-resp.jpg) !important;
     }
     .slider1-content {
         top: 22vh;
@@ -253,16 +253,17 @@
     }
     .new-above .new-img {
         height: 50rem;
-        background-image: url(../img/new/new-img--resp.jpg) !important;
+        background-image: url(../img/new/new-img1-resp.jpg) !important;
     }
     .new-above .new-time {
-        margin-top: 3.4rem;
+        margin-top: 3rem;
     }
     .new-above .row .column-8 {
         width: 100%;
     }
     .new-link h3 {
         font-size: 2.8rem;
+        line-height: 1;
     }
     .new-desc, 
     .new-above-btn-wrap, 
@@ -276,10 +277,10 @@
         width: 100%;
     }
     .new-under .new-list .row:nth-child(1) .new-img {
-        background-image: url(../img/new/new-img_1--resp.jpg) !important;
+        background-image: url(../img/new/new-img2-resp.jpg) !important;
     }
     .new-under .new-list .row:nth-child(2) .new-img {
-        background-image: url(../img/new/new-img_2--resp.jpg) !important;
+        background-image: url(../img/new/new-img3-resp.jpg) !important;
     }
     .new-under .new-content {
         margin-top: 3.4rem;
