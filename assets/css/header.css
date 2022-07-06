@@ -231,18 +231,11 @@
 .chat-box-head {
     position: relative;
     padding: 3.6rem 5rem;
+    border-bottom: .1rem solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-}
-
-.chat-box-head::after {
-    content: '';
-    position: absolute;
-    inset: auto 0 0;
-    height: .1rem;
-    background-color: var(--border-color);
 }
 
 .chat-title {
@@ -275,7 +268,7 @@
 
 .chat-disc > div {
     position: relative;
-    margin-right: 2rem;
+    margin-right: 3.6%;
     width: 10.6%;
     height: max-content;
 }
@@ -297,23 +290,26 @@
 .chat-disc span {
     flex: 1;
     display: block;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    letter-spacing: .08rem;
     font-family: 'Poppins';
     color: var(--black);
 }
 
+.chat-choose-wrap {
+    margin-top: calc(2rem + 1.7%);
+}
+
 .chat-choose {
-    margin-top: 2.6rem;
-    padding: 1.6rem 1.8rem;
+    margin-top: 1.7%;
+    padding: calc(3.4% + .2rem) 4.5%;
     font-size: 1.6rem;
     font-family: 'Poppins';
     color: var(--text-color2);
     text-align: center;
     border: .1rem solid var(--border-color);
     cursor: pointer;
-}
-
-.chat-choose + .chat-choose {
-    margin-top: .68rem;
 }
 
 .chat-choose:hover {
@@ -334,6 +330,14 @@
     background-color: var(--border-color);
 }
 
+.chat-box-footer::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 1.6rem;
+    height: .1rem;
+    background-color: var(--border-color);
+}
+
 .input-form {
     display: flex;
     align-items: center;
@@ -347,17 +351,10 @@
     background-color: var(--border-color);
 }
 
-.input-form::after {
-    content: '';
-    position: absolute;
-    inset: auto 0 1.6rem;
-    height: .1rem;
-    background-color: var(--border-color);
-}
-
 .input-form textarea {
     padding: .6rem 1.2rem;
     width: 36.2rem;
+    font-size: 1.6rem;
     font-weight: 300;
     letter-spacing: .1rem;
     border-color: var(--border-color);
