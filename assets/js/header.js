@@ -94,30 +94,71 @@ searchClose.addEventListener('click', function() {
 });
 
 // Font-size auto
+let chatDisc = get('.chat-disc');
+let chatBoxL = getAll('.chat-disc > div > span');
+let chatDiscSpan = getAll('.chat-disc > span');
+let chatChoose = getAll('.chat-choose');
+let chatBoxInput = get('.input-form textarea');
+
+function setFontSize(
+	element, 
+	fontSize, 
+	minFontSize
+) {
+	if(element.length) {
+		if(fontSize < minFontSize) {
+			element.forEach(e => {
+				e.setAttribute('style', `font-size: ${minFontSize}px`);
+			});
+		} else {
+			element.forEach(e => {
+				e.setAttribute('style', `font-size: ${fontSize}px`);
+			});
+		}
+	} else {
+		if(fontSize < minFontSize) {
+			element.setAttribute('style', `font-size: ${minFontSize}px`);
+		} else {
+			element.setAttribute('style', `font-size: ${fontSize}px`);
+		}
+	}
+}
+
 setInterval(function() {
-	let chatDisc = get('.chat-disc');
-	let chatBoxL = getAll('.chat-disc > div > span');
-	let chatDiscSpan = getAll('.chat-disc > span');
-	let chatBoxInput = get('.input-form textarea');
+	setFontSize(chatBoxL, chatDisc.offsetWidth * .05, 0);
 	
-	chatBoxL.forEach(element => {
-		element.setAttribute('style', `font-size: ${chatDisc.offsetWidth * .05}px`);
-	});
+	let windowWidth = window.innerWidth;
 
-	if(chatDisc.offsetWidth * .02 < 16) {
-		chatDiscSpan.forEach(element => {
-			element.setAttribute('style', 'font-size: 16px');
-		});
+	if(windowWidth <= 1024) {
+		setFontSize(
+			chatDiscSpan, 
+			chatDisc.offsetWidth * .02, 
+			14
+		);
 
-		chatBoxInput.setAttribute('style', 'font-size: 16px');
+		setFontSize(
+			chatChoose, 
+			chatDisc.offsetWidth * .02, 
+			15
+		);
+		
+		setFontSize(
+			chatBoxInput, 
+			chatDisc.offsetWidth * .02, 
+			14
+		);
 	} else {
 		chatDiscSpan.forEach(element => {
-			element.setAttribute('style', `font-size: ${chatDisc.offsetWidth * .02}px`);
+			element.removeAttribute('style');
+		});
+		
+		chatChoose.forEach(element => {
+			element.removeAttribute('style');
 		});
 
-		chatBoxInput.setAttribute('style', `font-size: ${chatDisc.offsetWidth * .02}px`);
+		chatBoxInput.removeAttribute('style');
 	}
-});
+}, 1);
 
 // MENU
 let headerIcon = getAll('.header-icon:not(:last-child)');
