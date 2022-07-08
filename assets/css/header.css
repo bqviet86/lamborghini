@@ -35,7 +35,8 @@
 
 .navbar-item {
     position: relative;
-    padding: 0 1.3rem;
+    margin: 0 1.3rem;
+    line-height: 1.2;
 }
 
 .navbar-item::before {
@@ -759,14 +760,6 @@
 
 .action-button.active > svg path {
     stroke: var(--black);
-}
-
-.action-button.active:hover > svg path:nth-child(1) {
-    fill: var(--black);
-}
-
-.action-button.active:hover > svg path:nth-child(2) {
-    stroke: var(--white);
 }
 
 .action-button span {
