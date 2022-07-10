@@ -57,8 +57,14 @@
     }
 
     /* SLIDER2 */
+    .slider2.open-model {
+        transform: translateX(-85%);
+    }
     .slider2-content {
         left: calc(100% / 24);
+    }
+    .model-item {
+        padding-top: 1.1rem;
     }
     .model-content-item span {
         font-size: 1.4rem;

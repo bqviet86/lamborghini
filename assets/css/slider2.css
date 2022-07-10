@@ -18,6 +18,7 @@
     right: 0;
     display: flex;
     height: 100%;
+    z-index: 1;
 }
 
 .slider2-img {
@@ -80,6 +81,7 @@
     display: flex;
     flex-direction: column;
     color: var(--white);
+    z-index: 2;
 }
 
 .slider2-content-above {
@@ -175,6 +177,8 @@
 
 /* MODEL */
 .model-wrap {
+    position: absolute;
+    left: 100%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
@@ -188,11 +192,6 @@
     padding: 0 8.33vw 0 2vw;
     width: 70%;
     height: 100%;
-    display: none;
-}
-
-.model.active {
-    display: block;
 }
 
 .model > svg {
@@ -204,8 +203,12 @@
 .model-main {
     padding: calc(17vh + 6rem) 0 calc((17vh + 6rem) / 3);
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
+}
+
+.model-main.active {
+    display: flex;
 }
 
 .model-list {
@@ -216,7 +219,7 @@
 
 .model-item {
     position: relative;
-    padding-top: 2rem;
+    padding-top: 2.1rem;
 }
 
 .model-item:hover .model-name {
@@ -227,6 +230,7 @@
     position: relative;
     font-size: 2.4rem;
     font-weight: 500;
+    letter-spacing: .07rem;
     line-height: 2;
     color: #464646;
     cursor: pointer;

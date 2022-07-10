@@ -94,70 +94,70 @@ searchClose.addEventListener('click', function() {
 });
 
 // Font-size auto
-let chatDisc = get('.chat-disc');
 let chatBoxL = getAll('.chat-disc > div > span');
 let chatDiscSpan = getAll('.chat-disc > span');
 let chatChoose = getAll('.chat-choose');
-let chatBoxInput = get('.input-form textarea');
+let chatBoxInput = getAll('.input-form textarea');
 
 function setFontSize(
 	element, 
 	fontSize, 
-	minFontSize
+	minFontSize, 
+	windowWidth,
+	maxWidthWindow
 ) {
-	if(element.length) {
+	if(windowWidth <= maxWidthWindow) {
 		if(fontSize < minFontSize) {
-			element.forEach(e => {
-				e.setAttribute('style', `font-size: ${minFontSize}px`);
-			});
+			for(let i = 0; i < element.length; i++) {
+				element[i].setAttribute('style', `font-size: ${minFontSize}px`);
+			}
 		} else {
-			element.forEach(e => {
-				e.setAttribute('style', `font-size: ${fontSize}px`);
-			});
+			for(let i = 0; i < element.length; i++) {
+				element[i].setAttribute('style', `font-size: ${fontSize}px`);
+			}
 		}
 	} else {
-		if(fontSize < minFontSize) {
-			element.setAttribute('style', `font-size: ${minFontSize}px`);
-		} else {
-			element.setAttribute('style', `font-size: ${fontSize}px`);
+		for(let i = 0; i < element.length; i++) {
+			element[i].removeAttribute('style');
 		}
 	}
 }
 
 setInterval(function() {
-	setFontSize(chatBoxL, chatDisc.offsetWidth * .05, 0);
-	
+	let chatDiscWidth = get('.chat-disc').offsetWidth;
 	let windowWidth = window.innerWidth;
 
-	if(windowWidth <= 1024) {
-		setFontSize(
-			chatDiscSpan, 
-			chatDisc.offsetWidth * .02, 
-			14
-		);
-
-		setFontSize(
-			chatChoose, 
-			chatDisc.offsetWidth * .02, 
-			15
-		);
-		
-		setFontSize(
-			chatBoxInput, 
-			chatDisc.offsetWidth * .02, 
-			14
-		);
-	} else {
-		chatDiscSpan.forEach(element => {
-			element.removeAttribute('style');
-		});
-		
-		chatChoose.forEach(element => {
-			element.removeAttribute('style');
-		});
-
-		chatBoxInput.removeAttribute('style');
-	}
+	setFontSize(
+		chatBoxL, 
+		chatDiscWidth * .05, 
+		0,
+		windowWidth,
+		1024
+	);
+	
+	setFontSize(
+		chatDiscSpan, 
+		chatDiscWidth * .02, 
+		14,
+		windowWidth,
+		1024
+	);
+	
+	setFontSize(
+		chatChoose, 
+		chatDiscWidth * .02, 
+		15,
+		windowWidth,
+		1024
+	);
+	
+	setFontSize(
+		chatBoxInput, 
+		chatDiscWidth * .02, 
+		14,
+		windowWidth,
+		1024
+	);
 }, 1);
 
 // MENU
@@ -216,8 +216,8 @@ setInterval(function() {
 let menuMobile = get('.menu-mobile');
 let menuMobileContent = get('.menu-m-content');
 let menuButtonLv1 = getAll('.menu-lv1 > ul > li > div.menu-button');
-let menuButtonBack = getAll('.menu-button.back');
-let menuButtonLv2 = getAll('.menu-lv2 > ul > li > div.menu-button');
+let menuButtonBack = get('.menu-button.back');
+let menuButtonLv2 = getAll('.menu-lv2 .menu-lv2-main div.menu-button');
 let menuSub = getAll('.menu-sub');
 let actionButtons = getAll('.action-button');
 
@@ -274,15 +274,13 @@ menuButtonLv1.forEach(element => {
 		let menuButtonLv1Id = this.getAttribute('id');
 
 		menuMobileContent.classList.add('active');
-		activeElementArray(menuButtonLv1Id, 'menu-lv2');
+		activeElementArray(menuButtonLv1Id, 'menu-lv2-main');
 	});
 });
 
 // Click Menu button back
-menuButtonBack.forEach(element => {
-	element.addEventListener('click', function() {
-		menuMobileContent.classList.remove('active');
-	});
+menuButtonBack.addEventListener('click', function() {
+	menuMobileContent.classList.remove('active');
 });
 
 // Click Menu button level 2
@@ -290,7 +288,7 @@ openSub(menuButtonLv2, menuSub, '');
 
 menuButtonLv2.forEach(element => {
 	element.addEventListener('click', function() {
-		let menuOverview = get('.menu-lv2.active > .menu-overview');
+		let menuOverview = get('.menu-lv2-main.active > .menu-overview');
 
 		if(!this.classList.contains('active')) {
 			menuButtonLv2.forEach(element => {

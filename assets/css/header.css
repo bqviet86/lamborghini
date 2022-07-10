@@ -264,7 +264,7 @@
 
 .chat-disc {
     display: flex;
-    margin-top: calc(calc(100% + 4rem) * .07);
+    margin-top: calc((100% + 4rem) * .07);
 }
 
 .chat-disc > div {
@@ -283,9 +283,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    font-size: 2.1rem;
     color: var(--white);
     user-select: none;
+    transform: translate(-50%,-50%);
 }
 
 .chat-disc span {
@@ -293,7 +294,7 @@
     display: block;
     font-size: 1.6rem;
     line-height: 1.8;
-    letter-spacing: .08rem;
+    letter-spacing: .05rem;
     font-family: 'Poppins';
     color: var(--black);
 }
@@ -493,7 +494,7 @@
 }
 
 .menu-above-col {
-    width: calc(calc(100% - 16rem) / 3);
+    width: calc((100% - 16rem) / 3);
     display: flex;
     flex-direction: column;
 }
@@ -533,7 +534,7 @@
 }
 
 .menu-under > div {
-    width: calc(calc(100% - 16rem) / 3);
+    width: calc((100% - 16rem) / 3);
 }
 
 .menu-under > div + div {
@@ -633,6 +634,7 @@
 
 .menu-button {
     display: flex;
+    align-items: center;
     color: var(--white);
     font-size: 2.4rem;
     cursor: pointer;
@@ -646,6 +648,7 @@
 }
 
 .menu-button ion-icon {
+    margin-bottom: 2rem;
     font-size: 2.2rem;
     transition: transform .5s ease;
 }
@@ -669,10 +672,6 @@
     padding: 0 7vw;
     width: 50%;
     vertical-align: top;
-    display: none;
-}
-
-.menu-lv2.active {
     display: inline-block;
 }
 
@@ -689,6 +688,14 @@
 .menu-button.back span {
     margin-left: 1rem;
     padding-bottom: 0;
+}
+
+.menu-lv2-main {
+    display: none;
+}
+
+.menu-lv2-main.active {
+    display: block;
 }
 
 .menu-sub {
