@@ -4,7 +4,7 @@ let btnLeft = get('.slider2-dots svg.btn-left');
 let btnRight = get('.slider2-dots svg.btn-right');
 let slider2ImgWrap = get('.slider2-img-wrap');
 let slider2DescClass = 'slider2-desc';
-let modelClass = 'model';
+let modelMainClass = 'model-main';
 
 function setWidthFunc(length) {
 	let slider2Imgs = getAll('.slider2-img');
@@ -60,7 +60,7 @@ btnLeft.addEventListener('click', function() {
 		runAlphabet(alphabets, .5);
 
 		// Active Model
-		activeElementArray(slider2ImgFirstId, modelClass);
+		activeElementArray(slider2ImgFirstId, modelMainClass);
 	}
 });
 
@@ -108,7 +108,7 @@ btnRight.addEventListener('click', function() {
 		runAlphabet(alphabets, .5);
 
 		// Active Model
-		activeElementArray(slider2ImgActiveId, modelClass);
+		activeElementArray(slider2ImgActiveId, modelMainClass);
 	}
 });
 
@@ -117,34 +117,28 @@ let modelWrap = get('.model-wrap');
 let modelNames = getAll('.model-name');
 let modelContents = getAll('.model-content');
 let slider2ControlBtn = get('.slider2-control');
-let modelBtnBacks = getAll('.model > svg');
+let modelBtnBack = get('.model > svg');
 
-// Open Model and Set Model width
+// Set Model width
 setInterval(function() {
-    let windowWidth = window.innerWidth - 17;
+    let windowWidth = window.innerWidth;
 
-	if(windowWidth + 17 <= 1300) {
-		modelWrap.setAttribute('style', `margin-left: ${windowWidth}px; width: ${windowWidth * .85}px`);
-
-		slider2ControlBtn.addEventListener('click', function() {
-			slider2.setAttribute('style', 'transform: translateX(-85%)');
-		});
-	}
-	else {
-		modelWrap.setAttribute('style', `margin-left: ${windowWidth}px; width: ${windowWidth * .75}px`);
-
-		slider2ControlBtn.addEventListener('click', function() {
-			slider2.setAttribute('style', 'transform: translateX(-75%)');
-		});
+	if(windowWidth <= 1300) {
+		modelWrap.setAttribute('style', `width: ${(windowWidth - 17) * .85}px`);
+	} else {
+		modelWrap.setAttribute('style', `width: ${(windowWidth - 17) * .75}px`);
 	}
 }, 1);
 
+// Open Model
+slider2ControlBtn.addEventListener('click', function() {
+	slider2.classList.add('open-model');
+});
+
+// Close Model
+modelBtnBack.addEventListener('click', function() {
+	slider2.classList.remove('open-model');
+});
+
 // Click Model-name
 openSub(modelNames, modelContents, 'display: flex');
-
-// Click Model button back
-modelBtnBacks.forEach((element) => {
-	element.addEventListener('click', function() {
-		slider2.setAttribute('style', 'transform: translateX(0)');
-	});
-});
