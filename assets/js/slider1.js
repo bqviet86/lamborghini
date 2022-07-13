@@ -18,21 +18,24 @@ $(document).ready(function() {
 
 let slider1 = get('.slider1');
 
-function runAlphabet(alphabetArray, time) {
-	if (alphabetArray) {
-		for (let i = 0; i < alphabetArray.length; i++) {
-			alphabetArray[i].setAttribute('style', `animation-delay: ${time + i * .1}s`);
+function runAlphabet(alphabetArray, alphabetArrayActive, time) {
+	alphabetArray.forEach(element => {
+		element.removeAttribute('style');
+	});
+
+	if(alphabetArrayActive) {
+		for (let i = 0; i < alphabetArrayActive.length; i++) {
+			alphabetArrayActive[i].setAttribute('style', `animation-delay: ${time + i * .1}s`);
 		}
 	}
 }
 
 // Handle animation Slider1-title
 setInterval(function() {
-	let alphabets = getAll(
-		'.slick-current.slick-active .slider1-title > div > div'
-	);
+	let alphabets = getAll('.slider1-title > div > div');
+	let alphabetsActive = getAll('.slick-active .slider1-title > div > div');
 
-	runAlphabet(alphabets, 1);
+	runAlphabet(alphabets, alphabetsActive, 1);
 }, 1);
 
 // Slider1-height auto
@@ -41,8 +44,8 @@ setInterval(function() {
 	let emissions = get('.emissions');
 
 	if(windowWidth <= 760) {
-		slider1.setAttribute('style', `height: ${window.innerHeight -  emissions.offsetHeight}px`);
+		slider1.setAttribute('style', `height: ${window.innerHeight -  emissions.offsetHeight}px; min-height: unset`);
 	} else {
-		slider1.setAttribute('style', 'height: 100vh');	
+		slider1.removeAttribute('style');	
 	}
 }, 1000);
