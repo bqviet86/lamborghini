@@ -3,6 +3,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    min-height: 70rem;
     user-select: none;
     background-color: var(--black);
     transition: transform 1s cubic-bezier(.13, .99, .18, .99);
@@ -48,14 +49,12 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    visibility: hidden;
     background-color: rgba(0, 0, 0, .75);
-    transition: all .5s ease-out;
+    transition: opacity .5s ease-out;
 }
 
 .slider2-img:not(.slider2-img.active) .slider2-skew::after {
     opacity: 1;
-    visibility: visible;
 }
 
 .slider2-skew-fix {
@@ -110,6 +109,7 @@
 }
 
 .slider2-info {
+    position: relative;
     flex: 0 0 50%;
     display: flex;
     flex-direction: column;
@@ -117,11 +117,9 @@
 }
 
 .slider2-desc {
-    display: none;
-}
-
-.slider2-desc.active {
-    display: block;
+    position: absolute;
+    inset: auto auto 11.08rem 0;
+    width: max-content;
 }
 
 .slider2-desc .slider2-name {
@@ -133,7 +131,7 @@
     display: inline-block;
     font-size: 11.6rem;
     font-weight: bold;
-    opacity: 0;
+    animation: fadeIn .5s ease forwards;
 }
 
 .slider2-desc .slider2-slogan {
@@ -141,7 +139,7 @@
     font-size: 3.2rem;
     font-weight: 500;
     line-height: 1.3;
-    opacity: 0;
+    animation: fadeIn .5s ease forwards;
 }
 
 .slider2-control {
@@ -167,11 +165,13 @@
 }
 
 .slider2-desc.active .slider2-name div {
-    animation: clear .5s ease-out forwards;
+    opacity: 0;
+    animation: clear .5s ease forwards;
 }
 
 .slider2-desc.active .slider2-slogan {
-    animation: textRun .7s ease-out forwards;
+    opacity: 0;
+    animation: textRun .7s ease forwards;
     animation-delay: .5s;
 }
 

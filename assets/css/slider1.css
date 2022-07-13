@@ -1,6 +1,7 @@
 .slider1 {
     position: relative;
     height: 100vh;
+    min-height: 70rem;
 }
 
 .slick-list, .slick-track {

@@ -384,6 +384,7 @@
     position: fixed;
     inset: 9.371rem 0 0;
     padding: 0 8.33333% 10.5rem;
+    overflow: hidden;
     color: var(--white);
     background-color: var(--bg-color);
     transform: translateY(-100%);

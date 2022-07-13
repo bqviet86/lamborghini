@@ -54,10 +54,11 @@ btnLeft.addEventListener('click', function() {
 		}, 501);
 
 		// Run Information
-		let alphabets = getAll(`#${slider2ImgFirstId} .slider2-name div`);
+		let alphabets = getAll('.slider2-desc .slider2-name div');
+		let alphabetsActive = getAll(`#${slider2ImgFirstId} .slider2-name div`);
 
 		activeElementArray(slider2ImgFirstId, slider2DescClass);
-		runAlphabet(alphabets, .5);
+		runAlphabet(alphabets, alphabetsActive, .5);
 
 		// Active Model
 		activeElementArray(slider2ImgFirstId, modelMainClass);
@@ -102,10 +103,11 @@ btnRight.addEventListener('click', function() {
 		}, 501);
 
 		// Run Information
-		let alphabets = getAll(`#${slider2ImgActiveId} .slider2-name div`);
+		let alphabets = getAll('.slider2-desc .slider2-name div');
+		let alphabetsActive = getAll(`#${slider2ImgActiveId} .slider2-name div`);
 
 		activeElementArray(slider2ImgActiveId, slider2DescClass);
-		runAlphabet(alphabets, .5);
+		runAlphabet(alphabets, alphabetsActive, .5);
 
 		// Active Model
 		activeElementArray(slider2ImgActiveId, modelMainClass);
