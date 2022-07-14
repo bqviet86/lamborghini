@@ -54,11 +54,11 @@ btnLeft.addEventListener('click', function() {
 		}, 501);
 
 		// Run Information
-		// let alphabets = getAll('.slider2-desc .slider2-name div');
-		// let alphabetsActive = getAll(`#${slider2ImgFirstId} .slider2-name div`);
+		let alphabets = getAll('.slider2-desc .slider2-name div');
+		let alphabetsActive = getAll(`#${slider2ImgFirstId} .slider2-name div`);
 
-		// activeElementArray(slider2ImgFirstId, slider2DescClass);
-		// runAlphabet(alphabets, alphabetsActive, .5);
+		activeElementArray(slider2ImgFirstId, slider2DescClass);
+		runAlphabet(alphabets, alphabetsActive, .5);
 
 		// Active Model
 		activeElementArray(slider2ImgFirstId, modelMainClass);
@@ -103,15 +103,11 @@ btnRight.addEventListener('click', function() {
 		}, 501);
 
 		// Run Information
-		setInterval(function() {
-			let alphabets = getAll('.slider2-desc .slider2-name div');
-			let alphabetsActive = getAll(`#${slider2ImgActiveId} .slider2-name div`);
+		let alphabets = getAll('.slider2-desc .slider2-name div');
+		let alphabetsActive = getAll(`#${slider2ImgActiveId} .slider2-name div`);
 
-			console.log(alphabets);
-		}, 1);
-
-		// activeElementArray(slider2ImgActiveId, slider2DescClass);
-		// runAlphabet(alphabets, alphabetsActive, .5);
+		activeElementArray(slider2ImgActiveId, slider2DescClass);
+		runAlphabet(alphabets, alphabetsActive, .5);
 
 		// Active Model
 		activeElementArray(slider2ImgActiveId, modelMainClass);
@@ -148,7 +144,3 @@ modelBtnBack.addEventListener('click', function() {
 
 // Click Model-name
 openSub(modelNames, modelContents, 'display: flex');
-
-setInterval(function() {
-	let alphabets
-}, 1);
