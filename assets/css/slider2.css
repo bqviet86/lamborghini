@@ -131,7 +131,7 @@
     display: inline-block;
     font-size: 11.6rem;
     font-weight: bold;
-    animation: fadeIn .5s ease forwards;
+    animation: fadeIn .5s ease-out forwards;
 }
 
 .slider2-desc .slider2-slogan {
@@ -139,7 +139,7 @@
     font-size: 3.2rem;
     font-weight: 500;
     line-height: 1.3;
-    animation: fadeIn .5s ease forwards;
+    animation: fadeIn .5s ease-out forwards;
 }
 
 .slider2-control {
@@ -166,12 +166,12 @@
 
 .slider2-desc.active .slider2-name div {
     opacity: 0;
-    animation: clear .5s ease forwards;
+    animation: clear .5s ease-out forwards;
 }
 
 .slider2-desc.active .slider2-slogan {
     opacity: 0;
-    animation: textRun .7s ease forwards;
+    animation: textRun .7s ease-out forwards;
     animation-delay: .5s;
 }
 
