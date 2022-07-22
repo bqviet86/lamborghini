@@ -760,13 +760,13 @@
     z-index: 1000;
 }
 
-.action-button.active {
+.action-button-wrap.active .action-button {
     color: var(--text-color);
     background-color: var(--white);
     transition: none;
 }
 
-.action-button.active > svg path {
+.action-button-wrap.active .action-button > svg path {
     stroke: var(--black);
 }
 
@@ -795,7 +795,7 @@
     transition: all .3s ease-out;
 }
 
-.action-content.active {
+.action-button-wrap.active .action-content {
     transform: translateY(0);
 }
 
