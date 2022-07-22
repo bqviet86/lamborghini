@@ -131,7 +131,7 @@
     display: inline-block;
     font-size: 11.6rem;
     font-weight: bold;
-    animation: fadeIn .5s ease-out forwards;
+    animation: fadeIn .25s linear forwards;
 }
 
 .slider2-desc .slider2-slogan {
@@ -139,7 +139,7 @@
     font-size: 3.2rem;
     font-weight: 500;
     line-height: 1.3;
-    animation: fadeIn .5s ease-out forwards;
+    animation: fadeIn .25s linear forwards;
 }
 
 .slider2-control {

@@ -219,7 +219,7 @@ let menuButtonLv1 = getAll('.menu-lv1 > ul > li > div.menu-button');
 let menuButtonBack = get('.menu-button.back');
 let menuButtonLv2 = getAll('.menu-lv2 .menu-lv2-main div.menu-button');
 let menuSub = getAll('.menu-sub');
-let actionButtons = getAll('.action-button');
+let actionButtons = getAll('.action-button-wrap');
 
 function activeElementArray(idName, className) {
 	let elementArray = getAll(`.${className}`);
@@ -308,14 +308,13 @@ menuButtonLv2.forEach(element => {
 // Click Action button
 actionButtons.forEach(element => {
 	element.addEventListener('click', function() {
-		let actionId = this.getAttribute('id');
+		let isActive = this.classList.contains('active');
 
-		if(!this.classList.contains('active')) {
-			activeElementArray(actionId, 'action-button');
-			activeElementArray(actionId, 'action-content');
-		} else {
-			this.classList.remove('active');
-			this.nextElementSibling.classList.remove('active');
+		if(!isActive) {
+			actionButtons.forEach((e) => {
+				e.classList.remove('active');
+			});
 		}
+		this.classList.toggle('active', !isActive);
 	});
 });
