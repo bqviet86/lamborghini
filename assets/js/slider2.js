@@ -117,7 +117,7 @@ btnRight.addEventListener('click', function() {
 // SLIDER2 MODEL
 let modelWrap = get('.model-wrap');
 let modelNames = getAll('.model-name');
-let modelContents = getAll('.model-content');
+let modelContents = getAll('.model-content-wrap');
 let slider2ControlBtn = get('.slider2-control');
 let modelBtnBack = get('.model > svg');
 
@@ -143,4 +143,4 @@ modelBtnBack.addEventListener('click', function() {
 });
 
 // Click Model-name
-openSub(modelNames, modelContents, 'display: flex');
+openSub(modelNames, modelContents);

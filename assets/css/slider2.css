@@ -245,8 +245,14 @@
     background-color: #464646;
 }
 
+.model-content-wrap {
+    height: 0;
+    overflow: hidden;
+    transition: height .5s ease;
+}
+
 .model-content {
-    display: none;
+    display: flex;
     justify-content: flex-end;
 }
 
