@@ -234,8 +234,7 @@ function activeElementArray(idName, className) {
 
 function openSub(
 	elementClick, 
-	elementOpen, 
-	styleActiveString
+	elementOpen
 ) {
 	let check = -1;
 
@@ -246,12 +245,7 @@ function openSub(
 					element.removeAttribute('style');
 				});
 				
-				if(styleActiveString) {
-					elementOpen[i].setAttribute('style', `${styleActiveString}`);
-				} else {
-					elementOpen[i].setAttribute('style', `height: ${elementOpen[i].scrollHeight}px`);
-				}
-
+				elementOpen[i].setAttribute('style', `height: ${elementOpen[i].scrollHeight}px`);
 				check = i;
 			} else {
 				elementOpen[i].removeAttribute('style');
@@ -284,7 +278,7 @@ menuButtonBack.addEventListener('click', function() {
 });
 
 // Click Menu button level 2
-openSub(menuButtonLv2, menuSub, '');
+openSub(menuButtonLv2, menuSub);
 
 menuButtonLv2.forEach(element => {
 	element.addEventListener('click', function() {
