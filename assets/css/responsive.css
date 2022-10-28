@@ -37,6 +37,9 @@
     .menu-above-col + .menu-above-col {
         margin-left: 3rem;
     }
+    .menu-socials {
+        margin-right: 0;
+    }
     @media (max-width: 72.5em) { /* 1160px */
         .menu-settings-wrap {
             padding-right: 0;
