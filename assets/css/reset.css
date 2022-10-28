@@ -4,6 +4,7 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +29,7 @@ svg {
     display: block;
     max-width: 100%;
 }
+
 input,
 button,
 textarea,
@@ -35,6 +37,7 @@ select {
     font: inherit;
     outline: none;
 }
+
 p,
 h1,
 h2,

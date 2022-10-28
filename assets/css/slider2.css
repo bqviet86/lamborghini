@@ -302,7 +302,6 @@
     line-height: 1;
     letter-spacing: .24rem;
     opacity: 0;
-    transform: translateY(-50%);
     transition: opacity .3s ease;
 }
 

@@ -9,13 +9,13 @@ $(document).ready(function() {
 		cssEase: 'ease',
 		arrows: false,
 		draggable: false,
-	});
-});
+	})
+})
 
 // Handle animation Slider3-title
 setInterval(function() {
-	let alphabets = getAll('.slider3-title > div > div');
-	let alphabetsActive = getAll('.slick-current.slick-active .slider3-title > div > div');
+	let alphabets = getAll('.slider3-title > div > div')
+	let alphabetsActive = getAll('.slick-current.slick-active .slider3-title > div > div')
 
-	runAlphabet(alphabets, alphabetsActive, 0);
-}, 1);
+	runAlphabet(alphabets, alphabetsActive, 0)
+}, 1)

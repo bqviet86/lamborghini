@@ -104,7 +104,7 @@ svg.btn {
 svg.btn g,
 svg.btn path,
 svg.btn text {
-    transition: stroke .3s ease-out, fill .3s ease-out;
+    transition: all .3s ease-out;
 }
 
 svg.btn-left path:nth-child(2) {
